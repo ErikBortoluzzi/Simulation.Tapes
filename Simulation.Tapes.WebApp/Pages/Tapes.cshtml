@@ -1,0 +1,57 @@
+﻿@page "tapesId"
+@model Simulation.Tapes.WebApp.Pages.TapesModel
+@{
+    ViewData["Title"] = "Tapes";
+}
+<style>
+    .alert{color:red}
+    .successbackground{
+        background-color:green
+    }
+    .dangerbackground{
+        background-color: red
+    }
+</style>
+<div class="text-center">
+   <div >
+       <table class="table table-bordered">
+           <thead>
+               <tr>
+                   <th >Id</th>
+                   <th >Speed</th>
+                   <th >Consume</th>
+                   <th >Date</th>
+                   <th >IdSection</th>
+                   <th >Status</th>
+               </tr>
+           </thead>
+           <tbody>
+                   @foreach(var text in Model.tapes)
+                {
+                    <tr>
+                         <td>@text.Id</td>
+                          <td>@text.Speed</td>
+                          <td 
+                            id="consume" 
+                            class="consumeclass @(@text.Consume > 60 ? "text-danger" : "")">
+                            @text.Consume
+                            </td>
+                          <td>@text.Date</td>
+                          <td>@text.IdSection</td>
+                          <td 
+                            class=@(@text.Consume > 60 ? "bg-danger" : "bg-success")>
+                            @(@text.Consume > 60 ? "Alarm! Consume too high" : "Ok! Consume acceptable")
+                        </td>
+                    </tr>
+               
+               }
+            </tbody>
+       </table>
+   </div>
+</div>
+<script type='text/javascript'
+            src='http://code.jquery.com/jquery-1.9.1.js'></script>
+    <link rel="stylesheet" type="text/css"
+          href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" />
+    <script type='text/javascript'
+            src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>

@@ -1,0 +1,19 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+      @foreach (var sections in @Model.sections)
+{
+    <div class="card mb-5 mt-5">
+        <a class="btn btn-outline-warning nav-link text-dark text-start" asp-page="/Tapes" asp-route-tapesId="@sections.Id" >
+            <div class="card-header bg-info">
+               Click to see tapes for the section :  @sections.Id
+            </div>
+        </a>
+    </div>
+
+}
+</div>

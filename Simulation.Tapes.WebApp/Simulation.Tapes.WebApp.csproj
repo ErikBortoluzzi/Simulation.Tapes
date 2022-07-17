@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>ac131696-9cf8-4214-a223-94599983e87a</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Simulation.Tapes.ApplicationCore\Simulation.Tapes.ApplicationCore.csproj" />
+    <ProjectReference Include="..\Simulation.Tapes.Infrastructure\Simulation.Tapes.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
